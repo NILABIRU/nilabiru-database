@@ -26,7 +26,7 @@ services:
       - postgres-data:/var/lib/postgresql/data
 
   nilabiru-mongodb:
-    image: mongo:8.0.11
+    image: mongo:8.0
     container_name: nilabiru-mongodb
     restart: unless-stopped
     ports:
