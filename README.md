@@ -51,31 +51,22 @@ Then edit `.env`:
 
 ```env
 # Tailscale
-TAILSCALE_IP=your_tailscale_ip
+TAILSCALE_IP=
 
 # MariaDB
-MARIADB_ROOT_PASSWORD=your_mariadb_root_password
-MARIADB_USER=your_mariadb_user
-MARIADB_PASSWORD=your_mariadb_password
+MARIADB_ROOT_PASSWORD=
+MARIADB_USER=
+MARIADB_PASSWORD=
 
 # PostgreSQL
-POSTGRES_USER=your_postgres_user
-POSTGRES_PASSWORD=your_postgres_password
-POSTGRES_DB=your_database_name
+POSTGRES_USER=
+POSTGRES_PASSWORD=
+POSTGRES_DB=
 
 # MongoDB
-MONGO_ROOT_USERNAME=your_mongo_root_username
-MONGO_ROOT_PASSWORD=your_mongo_root_password
+MONGO_ROOT_USERNAME=
+MONGO_ROOT_PASSWORD=
 ```
-
-> **Note:** Never commit `.env` to version control. It is already listed in `.gitignore`.
-
-> **Note:** MariaDB is configured with `MARIADB_USER` / `MARIADB_PASSWORD` but no initial database (`MARIADB_DATABASE`). The user is created, but it has no privileges on any database until you create one and grant access, e.g. as `root`:
->
-> ```sql
-> CREATE DATABASE myapp;
-> GRANT ALL PRIVILEGES ON myapp.* TO 'your_mariadb_user'@'%';
-> ```
 
 ### 3. Start the stack
 
